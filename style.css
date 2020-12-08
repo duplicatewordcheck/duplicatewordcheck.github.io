@@ -1,0 +1,309 @@
+html {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    padding: 1.2rem 2.4rem;
+    background-color: #2196f3;
+}
+
+h1 {
+    margin: 0;
+    font-size: 4.8rem;
+    font-weight: normal;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 1.2rem;
+}
+
+button {
+    margin: 0 12px;
+}
+
+#actions {
+    flex: 3 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1.2rem;
+}
+
+#actions > label {
+    margin-right: 0.6rem;
+}
+
+#options {
+    flex: 1 0 0;
+    padding: 1.2rem;
+    min-width: 20rem;
+}
+
+#options > label {
+    width: 100%;
+}
+
+hr {
+    margin: 0;
+    border: none;
+    width: 100%;
+    height: 0;
+}
+
+mark {
+    margin: -0.2rem;
+    border: 0.2rem solid transparent;
+    border-radius: 0.4rem;
+    color: transparent;
+    background: transparent;
+}
+
+#text {
+    position: relative;
+    flex: 3 0 0;
+    padding: 0 1.2rem;
+    transition: height 0.3s;
+}
+
+textarea,
+#highlights {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    border: solid 0.1rem rgba(0, 0, 0, 0.54);
+    border-radius: 0.4rem;
+    padding: 1.3rem;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 2rem;
+    outline: none;
+    transition: height 0.3s;
+}
+
+textarea {
+    box-sizing: border-box;
+    width: calc(100% - 2.4rem);
+    height: 100%;
+    background: transparent;
+    resize: none;
+}
+
+textarea:focus {
+    border: solid 0.2rem #2196f3;
+    padding: 1.2rem;
+}
+
+#highlights {
+    z-index: -1;
+    box-sizing: border-box;
+    width: calc(100% - 2.4rem);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: transparent;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#list {
+    position: relative;
+    flex: 1 0 0;
+    padding: 0 1.2rem;
+    min-width: 20rem;
+    min-height: calc(100vh - 24rem);
+    transition: height 0.3s;
+}
+
+.item {
+    position: absolute;
+    transition: top 0.3s, opacity 0.3s;
+    animation: add 0.3s;
+}
+
+.item > label {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.count,
+.word {
+    display: inline-block;
+    border: solid 0.2rem;
+    box-shadow: inset 20rem 2rem transparent;
+    transition: border 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.hidden:checked ~ .count,
+.hidden:checked ~ .word {
+    box-shadow: inset 20rem 2rem white;
+}
+
+.count {
+    border-radius: 50%;
+    min-width: 1.8rem;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+
+.word {
+    padding: 0 0.2rem;
+    border-radius: 0.4rem;
+    font-size: 1.6rem;
+}
+
+.obsolete {
+    opacity: 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    padding: 2.4rem 3.6rem;
+    color: #555;
+    background-color: #eee;
+    font-size: 1.4rem;
+}
+
+footer > div:last-child {
+    text-align: end;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+@keyframes add {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.pure-material-button-contained {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.pure-material-button-contained::-moz-focus-inner {
+    border: none;
+}
+
+/* Overlay */
+.pure-material-button-contained::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Ripple */
+.pure-material-button-contained::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: 50%;
+    width: 32px; /* Safari */
+    height: 32px; /* Safari */
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 1s, transform 0.5s;
+}
+
+/* Hover, Focus */
+.pure-material-button-contained:hover,
+.pure-material-button-contained:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pure-material-button-contained:hover::before {
+    opacity: 0.08;
+}
+
+.pure-material-button-contained:focus::before {
+    opacity: 0.24;
+}
+
+.pure-material-button-contained:hover:focus::before {
+    opacity: 0.3;
+}
+
+/* Active */
+.pure-material-button-contained:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.pure-material-button-contained:active::after {
+    opacity: 0.32;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+}
+
+/* Disabled */
+.pure-material-button-contained:disabled {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
+    box-shadow: none;
+    cursor: initial;
+}
+
+.pure-material-button-contained:disabled::before {
+    opacity: 0;
+}
+
+.pure-material-button-contained:disabled::after {
+    opacity: 0;
+}
