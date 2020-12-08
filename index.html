@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate word checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Duplicate Word Finder</h1>
+    </header>
+    <main>
+        <div id="actions">
+            <div>
+                <button id="copy" class="pure-material-button-contained">Copy</button>
+                <button id="clear" class="pure-material-button-contained">Clear</button>
+            </div>
+            <label class="pure-material-switch">
+                <input id="spellcheck" type="checkbox" checked>
+                <span>Spell Check</span>
+            </label>
+        </div>
+        <div id="options">
+            <label class="pure-material-slider">
+                <input id="length" type="range" min="1" max="10" value="4">
+                <span>Minimum Word Length: <output>4</output></span>
+            </label>
+        </div>
+        <hr>
+        <div id="text">
+            <textarea>Paste your text by pressing Ctrl+V or ⌘+V. (Once you click here, these instructions will be cleared for your convenience ;)
+            </textarea>
+            <div id="highlights"></div>
+        </div>
+        <ol id="list"></ol>
+    </main>
+    <footer>
+        <div>
+            Compiled by muha_ramdani<br/>
+            <br/>
+            <a href="https://twitter.com/muha_ramdani" target="_blank">Twitter</a> &nbsp; | &nbsp;
+            <a href="https://www.linkedin.com/in/muharamdani/" target="_blank">LinkedIn</a> &nbsp; | &nbsp;
+            <a href="https://github.com/muharamdani/" target="_blank">Github</a>
+        </div>
+        <div>
+            Source code<br/>
+            <br/>
+            <a href="https://codepen.io/finnhvman/pen/oPwXRa" target="_blank">CodePen</a>
+        </div>
+    </footer>
+    <template>
+        <li class="item">
+            <label>
+                <input class="hidden" type="checkbox">
+                <span class="count"></span>
+                <span class="word"></span>
+            </label>
+        </li>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
